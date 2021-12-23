@@ -20,19 +20,19 @@ bot.on("message", (msg) => {
     chatId,
     `${Math.round(
       (new Date("2022") - new Date()) / (1000 * 60 * 60 * 24)
-    )} days until 2022!`
+    ) - 1} days until 2022!`
   );
 });
 
 setInterval(() => {
   var date = new Date();
-  if (date.getHours() === 10 && date.getMinutes() === 0) {
+  if (date.getHours() === 7 && date.getMinutes() === 0) {
     subscribed_users.forEach((chatId) => {
       bot.sendMessage(
         chatId,
         `${Math.round(
           (new Date("2022") - new Date()) / (1000 * 60 * 60 * 24)
-        )} days until 2022!`
+        ) - 1} days until 2022!`
       );
     });
     console.log("sent!");
